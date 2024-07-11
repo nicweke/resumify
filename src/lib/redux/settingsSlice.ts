@@ -7,7 +7,7 @@ export interface Settings {
   fontSize: string;
   documentSize: string;
   formToShow: {
-    workExperience: boolean;
+    workExperiences: boolean;
     educations: boolean;
     projects: boolean;
     skills: boolean;
@@ -15,7 +15,7 @@ export interface Settings {
     referees: boolean;
   };
   formToHeading: {
-    workExperience: string;
+    workExperiences: string;
     educations: string;
     projects: string;
     skills: string;
@@ -50,7 +50,7 @@ export const initialSettings: Settings = {
   fontSize: DEFAULT_FONT_SIZE,
   documentSize: "A4",
   formToShow: {
-    workExperience: true,
+    workExperiences: true,
     educations: true,
     projects: true,
     skills: true,
@@ -58,7 +58,7 @@ export const initialSettings: Settings = {
     referees: true,
   },
   formToHeading: {
-    workExperience: "WORK EXPERIENCE",
+    workExperiences: "WORK EXPERIENCE",
     educations: "EDUCATION",
     projects: "PROJECTS",
     skills: "SKILLS",
@@ -67,7 +67,7 @@ export const initialSettings: Settings = {
   },
 
   formsOrder: [
-    "workExperience",
+    "workExperiences",
     "educations",
     "projects",
     "skills",
@@ -148,7 +148,7 @@ export const {
 } = settingsSlice.actions;
 
 export const selectSettings = (state: RootState) => state.settings;
-export const selectThemeColor = (state: RootState) => state.themeColor;
+export const selectThemeColor = (state: RootState) => state.settings.themeColor;
 export const selectFormToShow = (state: RootState) => state.settings.formToShow;
 export const selectShowByForm = (form: ShowForm) => (state: RootState) =>
   state.settings.formToShow[form];
